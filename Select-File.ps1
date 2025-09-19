@@ -1,3 +1,6 @@
+# Example usage
+#Show-FilePicker -Title "Pick" -Extension "txt"
+
 Add-Type -AssemblyName System.Windows.Forms
 
 function Select-File {
@@ -16,5 +19,3 @@ function Select-File {
     return $null
 }
 
-# Example usage
-Show-FilePicker -Title "Pick" -Extension "txt"
