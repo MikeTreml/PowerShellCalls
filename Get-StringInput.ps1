@@ -29,14 +29,16 @@ function Get-StringInput {
     $btnOK.Text = "OK"
     $btnOK.Size = New-Object System.Drawing.Size(80,30)
     $btnOK.Location = New-Object System.Drawing.Point(150,80)
+    $btnOK.DialogResult = [System.Windows.Forms.DialogResult]::OK
+    $form.AcceptButton = $btnOK
     $form.Controls.Add($btnOK)
 
-    $result = $null
-    $btnOK.Add_Click({
-        $result = $textbox.Text
-        $form.Close()
-    })
-
-    $form.ShowDialog() | Out-Null
-    return $result
+    if ($form.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
+        return $textbox.Text
+    }
+    return $null
 }
+
+# Example usage
+$value = Get-StringInput -Prompt "Enter your name:" -Title "Name Input" -Default "Mike"
+Write-Host "You entered: $value"
