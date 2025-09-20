@@ -1,3 +1,8 @@
+# Example usage
+#$value = Get-StringInput -Prompt "Enter your name:" -Title "Name Input" -Default "Mike"
+#Write-Host "You entered: $value"
+
+
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
@@ -39,6 +44,3 @@ function Get-StringInput {
     return $null
 }
 
-# Example usage
-$value = Get-StringInput -Prompt "Enter your name:" -Title "Name Input" -Default "Mike"
-Write-Host "You entered: $value"
