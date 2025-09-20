@@ -3,7 +3,7 @@
 
 Add-Type -AssemblyName System.Windows.Forms
 
-function Select-File {
+function Get-UserFile {
     param(
         [string]$Extension = "*",  # example: "txt" or "bacpac"
         [string]$Title = "Select a file"
